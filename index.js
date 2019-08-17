@@ -64,6 +64,25 @@ const getDogPicture = async () => {
         console.log('Random dag saved to files');
     } catch (error) {
         console.log(error)
+        throw err;
     }
+    return 'NB: Ready player one'
 };
-getDogPicture();
+
+(async () => {
+    try {
+        console.log('1. Will get dog pics');
+        const x = await getDogPicture();
+        console.log(x);
+        console.log('2. Done getting pics');
+    } catch (error) {
+        console.log('ERROR!!')
+    }
+})();
+
+// console.log('1. Will get dog pics');
+// getDogPicture().then(x => {
+//     console.log(x);
+//     console.log('2. Done getting pics');
+// })
+// .catch(err => console.log('ERROR!!'))
